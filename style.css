@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    background: #fdfdfd;
+    color: #333;
+  }
+  
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    margin-bottom: 20px; /* adds space between h1 and the nav */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* keeps the list compact and centered */
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav a:hover {
+    background-color: #00bcd4;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  section {
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 1rem 0;
+  }
+  
+  video {
+    margin-top: 1rem;
+  }
+  
+  footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  #location {
+    padding: 2rem;
+    border-top: 1px solid #ccc;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+  
+  
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
