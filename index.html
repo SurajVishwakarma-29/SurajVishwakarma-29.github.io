@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suraj Vishwakarma - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -18,6 +18,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#goals">Goals</a></li>
         <li><a href="#personal">Personal Side</a></li>
+        <li><a href="#contact">Contact Me</a></li>
         <li><a href="cart.html">Shopping Cart 🛒</a></li>
       </ul>
     </nav>
@@ -26,7 +27,7 @@
   <section id="welcome">
     <h2>Hello Myself Suraj</h2>
     <img src="Assest/IMG_20250418_210536 (1).jpg" alt="My Photo" />
-    <p>I'm Suraj Vishwakarma, a problem-solver at heart—whether it's debugging a complex piece of code or navigating real-life challenges, I approach both with a calm, analytical mindset. I believe that every problem has a solution if looked at from the right perspective, and I'm always eager to dive deep, understand the root cause, and find the most effective way forward. My passion lies not just in building things, but in making sure they work meaningfully and efficiently in the real world.</p>
+    <p>I'm Suraj Vishwakarma, a problem-solver at heart—whether it's debugging a complex piece of code or navigating real-life challenges, I approach both with a calm, analytical mindset...</p>
     <video controls width="300">
       <source src="assets/videos/intro.mp4" type="video/mp4" />
       Your browser does not support the video tag.
@@ -63,14 +64,24 @@
     <p>My dream is to help underprivileged students using technology.</p>
   </section>
 
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Programming Languages: C, C++, Java, Python</li>
+      <li>Web Technologies: HTML, CSS, JavaScript</li>
+      <li>Frameworks: React.js, Node.js</li>
+      <li>Tools: Git, GitHub, Visual Studio Code</li>
+    </ul>
+  </section>
+
   <section id="personal">
     <h2>Personal Side</h2>
-    <p><strong>Hobbies:</strong> Coding, Photography, Playing Guitar</p>
-    <p><strong>Role Models:</strong> Elon Musk, Ratan Tata</p>
+    <p><strong>Hobbies:</strong> Trekking, Cricket</p>
+    <p><strong>Role Models:</strong> Cristiano Ronaldo, Ratan Tata</p>
     <p><strong>Favorite Books:</strong> Deep Work, Atomic Habits</p>
-    <p><strong>Favorite Websites:</strong> GitHub, Medium</p>
+    <p><strong>Favorite Websites:</strong> GitHub, YouTube</p>
     <p><strong>Favorite Startups:</strong> Notion, Figma</p>
-    <p><strong>Volunteering:</strong> Teaching kids and blood donation camps</p>
+    <p><strong>Favorite Movies:</strong> 3 Idiots</p>
   </section>
 
   <section id="location">
@@ -81,8 +92,48 @@
     </iframe>
   </section>
 
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:surajvishwakarma567575@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <h3>Connect with me</h3>
+    <p>
+      <a href="https://www.linkedin.com/in/suraj-vishwakarma-5425bb296" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/SurajVishwakarma-29" target="_blank">GitHub</a> | 
+      <a href="https://twitter.com/surajvishwakarma" target="_blank">Twitter</a> | 
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=surajvishwakarma567575@gmail.com" target="_blank">Gmail</a>
+    </p>
+  </section>
+
   <footer>
     <p>Made by Suraj Vishwakarma | &copy; 2025</p>
   </footer>
+
+ 
+  <script>
+    document.addEventListener('mousemove', function (e) {
+      const trail = document.createElement('div');
+      trail.classList.add('trail');
+      trail.style.left = `${e.pageX}px`;
+      trail.style.top = `${e.pageY}px`;
+      document.body.appendChild(trail);
+      setTimeout(() => trail.remove(), 800);
+    });
+
+    //window.addEventListener('scroll', () => {
+      //document.querySelectorAll('.trail').forEach(el => el.remove());
+    //});
+  </script>
 </body>
 </html>
