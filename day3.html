@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Suraj Vishwakarma's personal portfolio showcasing skills, achievements, and goals." />
+  <meta name="keywords" content="Suraj Vishwakarma, portfolio, developer, full-stack, Mumbai" />
+  <meta name="author" content="Suraj Vishwakarma" />
+  <meta property="og:title" content="Suraj Vishwakarma - Portfolio" />
+  <meta property="og:description" content="Explore Suraj's skills, projects, and future goals." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Assest/IMG_20250418_210536 (1).jpg" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Suraj Vishwakarma - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Header with mobile menu -->
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Suraj Vishwakarma</h1>
+      <button id="menu-btn" class="md:hidden block text-white focus:outline-none">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 5h16M4 12h16M4 19h16" />
+        </svg>
+      </button>
+      <nav class="hidden md:flex space-x-4" id="menu">
+        <a href="#welcome" class="hover:underline">Home</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#achievements" class="hover:underline">Achievements</a>
+        <a href="#goals" class="hover:underline">Goals</a>
+        <a href="#personal" class="hover:underline">Personal</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav class="md:hidden hidden px-4 pt-4 space-y-2 bg-blue-700" id="mobile-menu">
+      <a href="#welcome" class="block text-white">Home</a>
+      <a href="#about" class="block text-white">About</a>
+      <a href="#achievements" class="block text-white">Achievements</a>
+      <a href="#goals" class="block text-white">Goals</a>
+      <a href="#personal" class="block text-white">Personal</a>
+      <a href="#contact" class="block text-white">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="welcome" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-2xl text-blue-600 font-semibold">Hello Myself Suraj</h2>
+    <img src="Assest/IMG_20250418_210536 (1).jpg" alt="My Photo" class="w-48 rounded-md mx-auto my-4" />
+    <p>I'm Suraj Vishwakarma, a problem-solver at heart—whether it's debugging a complex piece of code or navigating real-life challenges, I approach both with a calm, analytical mindset...</p>
+    <video controls class="mx-auto mt-4 rounded-md w-full max-w-sm">
+      <source src="assets/videos/intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="about" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">About Me</h2>
+    <p><strong>Name:</strong> Suraj Vishwakarma</p>
+    <p><strong>Location:</strong> Mumbai, India</p>
+    <p><strong>Education:</strong> B.Tech in Computer Engineering</p>
+    <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+  </section>
+
+  <section id="achievements" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Achievements</h2>
+    <ul class="list-disc ml-6">
+      <li>Runner-up in Hackathon</li>
+      <li>Completed Google Cloud Certification</li>
+    </ul>
+  </section>
+
+  <section id="goals" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Future Goals</h2>
+    <p>I aim to become a full-stack developer and contribute to open-source education platforms.</p>
+    <p>My dream is to help underprivileged students using technology.</p>
+  </section>
+
+  <section id="personal" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Personal Side</h2>
+    <p><strong>Hobbies:</strong> Trekking, Cricket</p>
+    <p><strong>Role Models:</strong> Cristiano Ronaldo, Ratan Tata</p>
+    <p><strong>Favorite Books:</strong> Deep Work, Atomic Habits</p>
+    <p><strong>Favorite Websites:</strong> GitHub, YouTube</p>
+    <p><strong>Favorite Startups:</strong> Notion, Figma</p>
+    <p><strong>Favorite Movies:</strong> 3 Idiots</p>
+  </section>
+
+  <section id="contact" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6 mb-6">
+    <h2 class="text-xl font-semibold text-blue-600">Contact Me</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="block font-medium">Name</label>
+        <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-medium">Email</label>
+        <input type="email" placeholder="you@example.com" class="w-full border border-gray-300 p-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-medium">Message</label>
+        <textarea placeholder="Write your message..." class="w-full border border-gray-300 p-2 rounded h-32"></textarea>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
+    </form>
+  </section>
+
+   <section style="text-align: center; margin: 20px 0;">
+  <button onclick="window.location.href='index.html'" 
+          style="padding: 10px 20px; background-color: #FF5733; color: white; border: none; border-radius: 5px;">
+    ← Back to Home
+  </button>
+</section>
+
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>Made by Suraj Vishwakarma | &copy; 2025</p>
+  </footer>
+
+  <!-- Mobile menu script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
