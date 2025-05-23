@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suraj Vishwakarma - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <header class="bg-blue-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Welcome to my portfolio</h1>
+    <nav class="mt-4">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="#welcome" class="hover:underline">Home</a></li>
+        <li><a href="#about" class="hover:underline">About Me</a></li>
+        <li><a href="#achievements" class="hover:underline">Achievements</a></li>
+        <li><a href="#goals" class="hover:underline">Goals</a></li>
+        <li><a href="#personal" class="hover:underline">Personal Side</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="welcome" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-2xl text-blue-600 font-semibold">Hello Myself Suraj</h2>
+    <img src="Assest/IMG_20250418_210536 (1).jpg" alt="My Photo" class="w-48 rounded-md mx-auto my-4" />
+    <p>I'm Suraj Vishwakarma, a problem-solver at heart—whether it's debugging a complex piece of code or navigating real-life challenges, I approach both with a calm, analytical mindset...</p>
+    <video controls class="mx-auto mt-4 rounded-md w-72">
+      <source src="assets/videos/intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="about" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">About Me</h2>
+    <p><strong>Name:</strong> Suraj Vishwakarma</p>
+    <p><strong>Location:</strong> Mumbai, India</p>
+    <p><strong>Education:</strong> B.Tech in Computer Engineering</p>
+    <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+  </section>
+
+  <section id="achievements" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Achievements</h2>
+    <ul class="list-disc ml-6">
+      <li>Runner-up in Hackathon</li>
+      <li>Completed Google Cloud Certification</li>
+    </ul>
+  </section>
+
+  <section id="goals" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Future Goals</h2>
+    <p>I aim to become a full-stack developer and contribute to open-source education platforms.</p>
+    <p>My dream is to help underprivileged students using technology.</p>
+  </section>
+
+  <section id="personal" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Personal Side</h2>
+    <p><strong>Hobbies:</strong> Trekking, Cricket</p>
+    <p><strong>Role Models:</strong> Cristiano Ronaldo, Ratan Tata</p>
+    <p><strong>Favorite Books:</strong> Deep Work, Atomic Habits</p>
+    <p><strong>Favorite Websites:</strong> GitHub, YouTube</p>
+    <p><strong>Favorite Startups:</strong> Notion, Figma</p>
+    <p><strong>Favorite Movies:</strong> 3 Idiots</p>
+  </section>
+
+  <section id="contact" class="bg-white shadow-md rounded-md p-6 max-w-3xl mx-auto mt-6">
+    <h2 class="text-xl font-semibold text-blue-600">Contact Me</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="block font-medium">Name</label>
+        <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-medium">Email</label>
+        <input type="email" placeholder="you@example.com" class="w-full border border-gray-300 p-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-medium">Message</label>
+        <textarea placeholder="Write your message..." class="w-full border border-gray-300 p-2 rounded h-32"></textarea>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
+    </form>
+  </section>
+   <section style="text-align: center; margin: 20px 0;">
+  <button onclick="window.location.href='index.html'" 
+          style="padding: 10px 20px; background-color: #FF5733; color: white; border: none; border-radius: 5px;">
+    ← Back to Home
+  </button>
+</section>
+
+  <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+    <p>Made by Suraj Vishwakarma | &copy; 2025</p>
+  </footer>
+
+</body>
+</html>
