@@ -2,142 +2,303 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Suraj's Fashion Store</title>
   <link rel="stylesheet" href="shop.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>🛍️ Suraj's Fashion Store</h1>
-    <nav>
-      <a href="index.html">Back to Portfolio</a>
-      <a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+
+  <header class="bg-gray-900 text-white p-4 flex justify-between items-center flex-wrap relative">
+    <h1 class="text-2xl font-bold">🛍️ Suraj's Fashion Store</h1>
+    <nav class="space-x-4 flex items-center">
+      <a href="index.html" class="bg-white text-gray-800 font-semibold px-4 py-2 rounded hover:bg-gray-100 transition">
+        🔙 Back to Portfolio
+      </a>
+      <a href="#" class="filter-btn" data-category="all">Show All</a>
+      <a href="#" class="filter-btn" data-category="tshirt">T-Shirts</a>
+      <a href="#" class="filter-btn" data-category="hoodie">Hoodies</a>
+      <a href="#" class="filter-btn" data-category="sneakers">Sneakers</a>
+      <button id="cart-button" class="ml-6 relative bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
     </nav>
   </header>
 
-  <main>
-    <section class="products">
-      <h2>Explore Our Collection</h2>
-
-      
-      <div class="product-grid">
-
-        
-        <div class="product" data-name="T-shirt" data-price="499">
-          <img class="main-image" src="Assest/good-looking-confident-young-man-red-t-shirt.jpg" alt="T-shirt">
-          <div class="thumbnails">
-            <img src="Assest/good-looking-confident-young-man-red-t-shirt.jpg" onclick="changeImage(this)">
-            <img src="Assest/man-wearing-t-shirt-gesturing.jpg" onclick="changeImage(this)">
-            <img src="Assest/serious-young-man-standing-isolated-yellow-wall.jpg" onclick="changeImage(this)">
-          </div>
-          <h3>T-shirt</h3>
-          <p>₹499</p>
-          <button onclick="addToCart(this)">Add to Cart</button>
-        </div>
-
-       
-        <div class="product" data-name="Sneakers" data-price="1599">
-          <img class="main-image" src="Assest\pexels-aditya-aiyar-615049-1407354.jpg" alt="Sneakers">
-          <div class="thumbnails">
-            <img src="Assest\pexels-aditya-aiyar-615049-1407354.jpg" onclick="changeImage(this)">
-            <img src="Assest\pexels-ankurbagai-1280064.jpg" onclick="changeImage(this)">
-            <img src="Assest\pexels-melvin-buezo-1253763-2529148.jpg" onclick="changeImage(this)">
-          </div>
-          <h3>Sneakers</h3>
-          <p>₹1599</p>
-          <button onclick="addToCart(this)">Add to Cart</button>
-        </div>
-
-       
-        <div class="product" data-name="Hoodie" data-price="799">
-          <img class="main-image" src="Assest/alternative-man-white-hoodie.jpg" alt="Hoodie">
-          <div class="thumbnails">
-            <img src="Assest/alternative-man-white-hoodie.jpg" onclick="changeImage(this)">
-            <img src="Assest/young-person-wearing-hoodie-mockup.jpg" onclick="changeImage(this)">
-            <img src="Assest\handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue.jpg" onclick="changeImage(this)">
-          </div>
-          <h3>Hoodie</h3>
-          <p>₹799</p>
-          <button onclick="addToCart(this)">Add to Cart</button>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="cart">
-      <h2>🛒 Your Cart</h2>
-      <ul id="cart-items"></ul>
-      <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
-    <button onclick="togglePaymentForm()">Proceed to Payment</button>"
-    <div id="payment-form" style="display: none; margin-top: 20px;">
-    <h3>Payment Details</h3>
-    <form>
-      <label>Name on Card:</label><br>
-      <input type="text" placeholder="John Doe" required><br><br>
-
-      <label>Card Number:</label><br>
-      <input type="text" placeholder="1234 5678 9012 3456" required><br><br>
-
-      <label>Expiry Date:</label><br>
-      <input type="month" required><br><br>
-
-      <label>CVV:</label><br>
-      <input type="password" placeholder="123" required><br><br>
-
-      <button type="submit">Pay Now</button>
-    </form>
-  </div>
-</section>
-    
-    
-    
-
-
-
-
+  <!-- Products -->
+  <main class="max-w-7xl mx-auto p-6 flex-grow">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Products</h2>
+    <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Products inserted dynamically -->
+    </div>
   </main>
 
+  <!-- Cart Sidebar -->
+  <aside id="cart-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+    <header class="p-4 border-b flex justify-between items-center">
+      <h2 class="text-xl font-bold">Your Cart</h2>
+      <button id="close-cart" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+    </header>
+    <ul id="cart-items" class="flex-grow overflow-auto p-4 space-y-3">
+      <!-- Cart items here -->
+    </ul>
+    <div class="p-4 border-t">
+      <p class="font-semibold text-lg">Total: ₹<span id="cart-total">0</span></p>
+      <button id="clear-cart" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded font-semibold">Clear Cart</button>
+      <button id="checkout-button" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded font-semibold">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-60">
+    <div class="bg-white rounded-lg p-6 w-96 max-w-full">
+      <h3 class="text-2xl font-bold mb-4">Checkout</h3>
+      <form id="checkout-form" class="space-y-4">
+        <div>
+          <label for="name" class="block font-semibold">Name:</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="email" class="block font-semibold">Email:</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+        <div>
+          <label for="address" class="block font-semibold">Address:</label>
+          <textarea id="address" name="address" required class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-semibold">Pay Now</button>
+      </form>
+      <button id="close-checkout" class="mt-4 w-full bg-gray-300 hover:bg-gray-400 py-2 rounded font-semibold">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-70">
+    <div class="bg-white rounded-lg p-6 w-96 max-w-full">
+      <h3 class="text-2xl font-bold mb-4">Order Confirmation</h3>
+      <div id="order-details" class="text-gray-700"></div>
+      <button id="close-confirmation" class="mt-6 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded font-semibold">Close</button>
+    </div>
+  </div>
+
   <script>
+    const products = [
+      { category: "tshirt", name: "Red T-shirt", price: 499, image: "Assest/good-looking-confident-young-man-red-t-shirt.jpg" },
+      { category: "tshirt", name: "Casual T-shirt", price: 549, image: "Assest/man-wearing-t-shirt-gesturing.jpg" },
+      { category: "tshirt", name: "Cool T-shirt", price: 599, image: "Assest/serious-young-man-standing-isolated-yellow-wall.jpg" },
+      { category: "hoodie", name: "White Hoodie", price: 799, image: "Assest/alternative-man-white-hoodie.jpg" },
+      { category: "hoodie", name: "Modern Hoodie", price: 850, image: "Assest/young-person-wearing-hoodie-mockup.jpg" },
+      { category: "hoodie", name: "Green Hoodie", price: 899, image: "Assest/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue.jpg" },
+      { category: "sneakers", name: "White Sneakers", price: 1599, image: "Assest/pexels-aditya-aiyar-615049-1407354.jpg" },
+      { category: "sneakers", name: "Cool Sneakers", price: 1699, image: "Assest/pexels-ankurbagai-1280064.jpg" },
+      { category: "sneakers", name: "Red Sneakers", price: 1799, image: "Assest/pexels-melvin-buezo-1253763-2529148.jpg" },
+    ];
+
+    const container = document.getElementById("product-container");
+    const cartCountEl = document.getElementById("cart-count");
+    const cartSidebar = document.getElementById("cart-sidebar");
+    const cartItemsEl = document.getElementById("cart-items");
+    const cartTotalEl = document.getElementById("cart-total");
+    const cartButton = document.getElementById("cart-button");
+    const closeCartBtn = document.getElementById("close-cart");
+    const clearCartBtn = document.getElementById("clear-cart");
+    const checkoutButton = document.getElementById("checkout-button");
+
+    const checkoutModal = document.getElementById("checkout-modal");
+    const closeCheckoutBtn = document.getElementById("close-checkout");
+    const checkoutForm = document.getElementById("checkout-form");
+
+    const confirmationModal = document.getElementById("confirmation-modal");
+    const closeConfirmationBtn = document.getElementById("close-confirmation");
+    const orderDetailsEl = document.getElementById("order-details");
+
+    // Cart items structure: { ...product, qty }
     let cart = [];
 
-    function addToCart(button) {
-      const product = button.closest('.product');
-      const name = product.dataset.name;
-      const price = parseInt(product.dataset.price);
-      cart.push({ name, price });
+    function displayProducts(category = "all") {
+      container.innerHTML = "";
+      const filtered = category === "all" ? products : products.filter(p => p.category === category);
+      filtered.forEach((p, idx) => {
+        const card = document.createElement("div");
+        card.className = "product-card bg-white rounded shadow p-4 flex flex-col items-center";
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.name}" class="product-image w-full h-48 object-cover rounded" />
+          <div class="mt-4 w-full">
+            <h3 class="font-semibold text-lg text-gray-800">${p.name}</h3>
+            <p class="text-blue-600 font-bold">₹${p.price}</p>
+            <button class="add-to-cart-btn mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-semibold" data-index="${idx}">
+              Add to Cart
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          const productIndex = button.dataset.index;
+          addToCart(products[productIndex]);
+        });
+      });
+    }
+
+    function addToCart(product) {
+      // Check if product already in cart
+      const existing = cart.find(item => item.name === product.name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
       updateCartUI();
+      alert(`${product.name} added to cart.`);
     }
 
     function updateCartUI() {
-      const cartItems = document.getElementById('cart-items');
-      const totalEl = document.getElementById('cart-total');
-      const countEl = document.getElementById('cart-count');
-
-      cartItems.innerHTML = '';
+      cartCountEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartItemsEl.innerHTML = "";
       let total = 0;
-      cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - ₹${item.price}`;
-        cartItems.appendChild(li);
-        total += item.price;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        const li = document.createElement("li");
+        li.className = "flex justify-between items-center border-b py-2";
+        li.innerHTML = `
+          <div>
+            <p class="font-semibold">${item.name}</p>
+            <p class="text-sm text-gray-600">₹${item.price} × ${item.qty} = ₹${item.price * item.qty}</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button class="decrease text-red-600 font-bold px-2 rounded border" data-index="${index}">-</button>
+            <button class="increase text-green-600 font-bold px-2 rounded border" data-index="${index}">+</button>
+            <button class="text-red-600 font-bold remove-btn ml-2" data-index="${index}">&times;</button>
+          </div>
+        `;
+        cartItemsEl.appendChild(li);
+      });
+      cartTotalEl.textContent = total;
+
+      // Remove item handler
+      document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.onclick = () => {
+          const idx = btn.dataset.index;
+          cart.splice(idx, 1);
+          updateCartUI();
+        };
       });
 
-      totalEl.textContent = total;
-      countEl.textContent = cart.length;
+      // Increase quantity handler
+      document.querySelectorAll(".increase").forEach(btn => {
+        btn.onclick = () => {
+          const idx = btn.dataset.index;
+          cart[idx].qty++;
+          updateCartUI();
+        };
+      });
+
+      // Decrease quantity handler
+      document.querySelectorAll(".decrease").forEach(btn => {
+        btn.onclick = () => {
+          const idx = btn.dataset.index;
+          if (cart[idx].qty > 1) {
+            cart[idx].qty--;
+          } else {
+            cart.splice(idx, 1);
+          }
+          updateCartUI();
+        };
+      });
     }
 
-    function changeImage(thumbnail) {
-      const mainImg = thumbnail.closest('.product').querySelector('.main-image');
-      mainImg.src = thumbnail.src;
-    }
-    function togglePaymentForm() 
-    {
-      const form = document.getElementById('payment-form');
-      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    function toggleCart() {
+      cartSidebar.classList.toggle("translate-x-full");
     }
 
+    function clearCart() {
+      if (confirm("Clear all items from the cart?")) {
+        cart = [];
+        updateCartUI();
+      }
+    }
 
+    // Filter buttons
+    document.querySelectorAll(".filter-btn").forEach(btn =>
+      btn.addEventListener("click", e => {
+        e.preventDefault();
+        displayProducts(btn.dataset.category);
+      })
+    );
 
+    cartButton.addEventListener("click", () => {
+      cartSidebar.classList.remove("translate-x-full");
+    });
+    closeCartBtn.addEventListener("click", () => {
+      cartSidebar.classList.add("translate-x-full");
+    });
+    clearCartBtn.addEventListener("click", clearCart);
+
+    // Checkout button - close cart sidebar and open checkout modal
+    checkoutButton.onclick = () => {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      cartSidebar.classList.add("translate-x-full"); // close cart
+      checkoutModal.classList.remove("hidden");
+      checkoutModal.style.display = "flex";
+    };
+
+    closeCheckoutBtn.onclick = () => {
+      checkoutModal.classList.add("hidden");
+      checkoutModal.style.display = "none";
+    };
+
+    // Handle checkout form submission
+    checkoutForm.onsubmit = (e) => {
+      e.preventDefault();
+      const name = checkoutForm.name.value.trim();
+      const email = checkoutForm.email.value.trim();
+      const address = checkoutForm.address.value.trim();
+
+      if (!name || !email || !address) {
+        alert("Please fill all the details.");
+        return;
+      }
+
+      // Prepare order details text
+      let orderText = `<p><strong>Name:</strong> ${name}</p>`;
+      orderText += `<p><strong>Email:</strong> ${email}</p>`;
+      orderText += `<p><strong>Address:</strong> ${address}</p>`;
+      orderText += `<p><strong>Items:</strong></p><ul>`;
+      cart.forEach(item => {
+        orderText += `<li>${item.name} - Qty: ${item.qty} - ₹${item.price * item.qty}</li>`;
+      });
+      orderText += `</ul>`;
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      orderText += `<p><strong>Total Paid:</strong> ₹${total}</p>`;
+
+      // Show confirmation modal
+      orderDetailsEl.innerHTML = orderText;
+      checkoutModal.classList.add("hidden");
+      checkoutModal.style.display = "none";
+      confirmationModal.classList.remove("hidden");
+      confirmationModal.style.display = "flex";
+
+      // Clear cart after order
+      cart = [];
+      updateCartUI();
+
+      // Reset form
+      checkoutForm.reset();
+    };
+
+    closeConfirmationBtn.onclick = () => {
+      confirmationModal.classList.add("hidden");
+      confirmationModal.style.display = "none";
+    };
+
+    // Initial product load
+    displayProducts();
   </script>
+
 </body>
 </html>
