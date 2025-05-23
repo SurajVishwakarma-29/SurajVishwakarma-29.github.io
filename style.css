@@ -1,4 +1,4 @@
-
+/* Base styling */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -10,7 +10,7 @@ body {
   position: relative;
 }
 
-
+/* Light trail lines on mouse move */
 .trail {
   position: fixed;
   width: 2px;
@@ -29,7 +29,7 @@ body {
   }
 }
 
-
+/* Header */
 header {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -71,7 +71,7 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-
+/* Section Styling */
 section {
   padding: 40px 20px;
   max-width: 900px;
@@ -91,7 +91,7 @@ section h2 {
   color: #ffffff;
 }
 
-
+/* Form Styling */
 form input, form textarea {
   width: 100%;
   padding: 10px;
@@ -117,7 +117,7 @@ form button:hover {
   background-color: #e91e63;
 }
 
-
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -126,7 +126,7 @@ footer {
   z-index: 1;
 }
 
-
+/* Image & Video Styling */
 img {
   max-width: 200px;
   border-radius: 10px;
@@ -138,6 +138,61 @@ video {
   margin-top: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Individual button colors */
+.day1 {
+  background-color: #007BFF;
+}
+
+.day2 {
+  background-color: #28a745;
+}
+
+.day3 {
+  background-color: #6c757d;
+}
+
+.cart {
+  background-color: #0c0250;
+}
+
+/* Hover Effects */
+.nav-button:hover {
+  transform: scale(1.05);
+}
+
+.day1:hover {
+  background-color: #0056b3;
+}
+
+.day2:hover {
+  background-color: #1e7e34;
+}
+
+.day3:hover {
+  background-color: #545b62;
+}
+.cart:hover {
+  background-color: #0c0250;
 }
 
 /* Gradient background animation */
